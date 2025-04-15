@@ -35,7 +35,7 @@ sudo docker run -it \
   -p 8080:80 \
   dpage/pgadmin4
 
--- once it has stated in terminal it listening at port, open browser & input localhost:8080
+-- once it has stated in terminal it is listening at port, open browser & input localhost:8080
 -- inout default email & password
 
 // Create a docker network for both 2+ containers to operate within
@@ -47,6 +47,6 @@ sudo docker network create (name)-network
 sudo docker rm --force ID or NAME 
 sudo docker rmi (image)
 
-// Running both containers in a network in order to connect to pgadmin
+// Running both containers in a single yaml file to connect to pgadmin
 
 
