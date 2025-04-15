@@ -2,6 +2,10 @@
 
 cd DataEngineeringZoomcamp25/week_one_setup/docker_sql
 
+// build docker container
+
+docker build -t name
+
 // In order to run postgres13 with docker
 
 sudo docker run -it \
@@ -18,3 +22,31 @@ sudo docker run -it \
 pgcli -h localhost -u root -d ny_taxi -p 5432
 
 -- will give password prompt
+
+// shows cols and data types
+
+\d yellow_taxi_data_100
+
+// runnig  pgadmin with docker
+
+sudo docker run -it \
+  -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+  -e PGADMIN_DEFAULT_PASSWORD="root" \
+  -p 8080:80 \
+  dpage/pgadmin4
+
+-- once it has stated in terminal it listening at port, open browser & input localhost:8080
+-- inout default email & password
+
+// Create a docker network for both 2+ containers to operate within
+
+sudo docker network create (name)-network
+
+// forcibly remove a docker container or image 
+
+sudo docker rm --force ID or NAME 
+sudo docker rmi (image)
+
+// Running both containers in a network in order to connect to pgadmin
+
+
