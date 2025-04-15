@@ -21,3 +21,9 @@ services:
   -p 5432:5432 \
   --user $(id -u):$(id -g) \
   postgres:13
+
+NOTE: when using a docker network, specify --network=...-network and --name ...-database
+
+--network=pg-network \
+  --name postgre-database \
+  postgres:13
