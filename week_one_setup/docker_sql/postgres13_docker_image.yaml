@@ -25,5 +25,5 @@ services:
 NOTE: when using a docker network, specify --network=...-network and --name ...-database
 
 --network=pg-network \
-  --name postgre-database \
-  postgres:13
+--name postgre-database \
+postgres:13
