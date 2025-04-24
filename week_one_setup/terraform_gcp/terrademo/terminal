@@ -1,0 +1,25 @@
+-- Steps for basic terraform initialisation & usage
+
+EXPORTING JSON CREDENTIALS KEY
+
+export GOOGLE_CREDENTIALS='/home/name/project/keys/my-creds.json'
+
+INITIALISING TERRAFORM IN MAIN.TF
+
+terraform init
+
+FORMATTING TF FILES (AFTER SAVE)
+
+terraform fmt
+
+PLANNING TERRAFORM 
+
+terraform plan
+
+APPLICATION
+
+terraform apply
+
+DESTROYING TERRAFORM
+
+terraform destroy
