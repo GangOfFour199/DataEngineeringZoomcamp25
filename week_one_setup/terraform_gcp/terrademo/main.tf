@@ -1,3 +1,6 @@
+-- main.tf contains terraform providers for google cloud, google cloud storage bucket & google BigQuery providers
+-- the variables have been declared in variables.tf
+
 terraform {
   required_providers {
     google = {
