@@ -1,3 +1,5 @@
+-- variables in this file declared for main.tf
+
 variable "credentials" {
   description = "My Credentials"
   default     = "./keys/my-creds.json"
