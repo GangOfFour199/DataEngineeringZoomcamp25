@@ -1,5 +1,3 @@
--- main.tf comprises of terraform provider for google cloud and google cloud storage buckets
-
 terraform {
   required_providers {
     google = {
@@ -10,13 +8,14 @@ terraform {
 }
 
 provider "google" {
-  project = "terraform-demo-457811"
-  region  = "europe-west2-a"
+  credentials = file(var.credentials)
+  project     = var.project_name
+  region      = var.region
 }
 
 resource "google_storage_bucket" "demo-bucket" {
-  name          = "demo-457811-tf-bucket"
-  location      = "EUROPE-WEST2"
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -28,3 +27,9 @@ resource "google_storage_bucket" "demo-bucket" {
     }
   }
 }
+
+resource "google_bigquery_dataset" "demo-dataset" {
+  dataset_id = var.bq_dataset_name
+  location   = var.location
+}
+  
