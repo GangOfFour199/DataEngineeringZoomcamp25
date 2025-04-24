@@ -1,3 +1,5 @@
+-- main.tf comprises of terraform provider for google cloud and google cloud storage buckets
+
 terraform {
   required_providers {
     google = {
