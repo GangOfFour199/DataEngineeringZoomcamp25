@@ -59,6 +59,11 @@ Use the pick up time for your calculations.
 
 Tip: For every day, we only care about one single trip with the longest distance. 
 
+- 2019-10-11
+- 2019-10-24
+- 2019-10-26
+- 2019-10-31
+
 ### Answer
 
 ## Question 5. Three biggest pickup zones
@@ -67,11 +72,6 @@ Which were the top pickup locations with over 13,000 in
 `total_amount` (across all trips) for 2019-10-18?
 
 Consider only `lpep_pickup_datetime` when filtering by date.
-
-- 2019-10-11
-- 2019-10-24
-- 2019-10-26
-- 2019-10-31
 
 ### Answer
 
