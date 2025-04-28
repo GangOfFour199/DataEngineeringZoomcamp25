@@ -126,7 +126,7 @@ FROM green_taxi_trips gt
 INNER JOIN green_taxi_zones puz
 ON gt."PULocationID" = puz."LocationID"
 INNER JOIN green_taxi_zones doz
-ON gt."PULocationID"= doz."LocationID"
+ON gt."DOLocationID"= doz."LocationID"
 WHERE puz."Zone" = 'East Harlem North'
 ORDER BY 3 DESC
 LIMIT 1;
