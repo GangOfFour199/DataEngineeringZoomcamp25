@@ -43,6 +43,14 @@ where
 group by
     1
 ```
+```
+"journey_distance"	"number_trips"
+"Up to 1 mile"	"  78,964"
+"Over 10 miles"	"  32,294"
+"Between 3 and 7 miles"	"  90,020"
+"Between 1 and 3 miles"	" 150,850"
+"Between 7 and 10 miles"	"  24,074"
+```
 
 ## Question 4. Longest trip for each day
 
