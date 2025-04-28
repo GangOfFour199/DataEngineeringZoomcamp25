@@ -90,6 +90,23 @@ Consider only `lpep_pickup_datetime` when filtering by date.
 
 ### Answer
 
+```sql
+SELECT "Zone", ROUND(SUM(gt.total_amount)::NUMERIC, 2) AS total_money
+FROM green_taxi_trips gt
+INNER JOIN green_taxi_zones gz
+ON gt."PULocationID" = gz."LocationID"
+WHERE gt.lpep_pickup_datetime::DATE = '2019-10-18'
+GROUP BY 1
+HAVING ROUND(SUM(gt.total_amount)::NUMERIC, 3) > 13000
+LIMIT 3;
+```
+```
+"Zone"			"total_money"
+"East Harlem North"	18686.68
+"East Harlem South"	16797.26
+"Morningside Heights"	13029.79
+```
+
 ## Question 6. Largest tip
 
 For the passengers picked up in October 2019 in the zone
