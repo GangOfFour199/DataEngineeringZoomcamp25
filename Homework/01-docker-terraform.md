@@ -3,12 +3,12 @@
 Run docker with the `python:3.12.8` image in an interactive mode, use the entrypoint `bash`.
 What's the version of `pip` in the image?
 
-## Answer 
+### Answer 
 - 24.3.1
 
 ## Question 2. Understanding Docker networking and docker-compose
 
-## Answers
+### Answers
 
 - postgres:5432
 - db:5432
