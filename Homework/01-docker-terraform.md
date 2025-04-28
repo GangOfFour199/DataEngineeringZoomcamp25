@@ -45,11 +45,11 @@ group by
 ```
 ```
 "journey_distance"	"number_trips"
-"Up to 1 mile"	"  78,964"
-"Over 10 miles"	"  32,294"
-"Between 3 and 7 miles"	"  90,020"
-"Between 1 and 3 miles"	" 150,850"
-"Between 7 and 10 miles"	"  24,074"
+Up to 1 mile		78,964
+Over 10 miles		32,294
+Between 3 and 7 miles	90,020
+Between 1 and 3 miles	150,850
+Between 7 and 10 miles 	24,074
 ```
 
 ## Question 4. Longest trip for each day
@@ -79,7 +79,7 @@ ORDER BY 2 DESC;
 ```
 ```
 "date"	"longest_daily_journey"
-"2019-10-31"	515.89
+2019-10-31	515.89
 ```
 ## Question 5. Three biggest pickup zones
 
@@ -102,9 +102,9 @@ LIMIT 3;
 ```
 ```
 "Zone"			"total_money"
-"East Harlem North"	18686.68
-"East Harlem South"	16797.26
-"Morningside Heights"	13029.79
+East Harlem North	18686.68
+East Harlem South	16797.26
+Morningside Heights	13029.79
 ```
 
 ## Question 6. Largest tip
