@@ -68,6 +68,11 @@ Which were the top pickup locations with over 13,000 in
 
 Consider only `lpep_pickup_datetime` when filtering by date.
 
+- 2019-10-11
+- 2019-10-24
+- 2019-10-26
+- 2019-10-31
+
 ### Answer
 
 ## Question 6. Largest tip
