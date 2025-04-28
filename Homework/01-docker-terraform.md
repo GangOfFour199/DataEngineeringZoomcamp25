@@ -118,8 +118,23 @@ Note: it's `tip` , not `trip`
 We need the name of the zone, not the ID.
 
 ### Answer
-
-
+```sql
+SELECT puz."Zone" AS pickup_zone,
+doz."Zone" AS dropoff_zone,
+gt.tip_amount AS biggest_tip
+FROM green_taxi_trips gt
+INNER JOIN green_taxi_zones puz
+ON gt."PULocationID" = puz."LocationID"
+INNER JOIN green_taxi_zones doz
+ON gt."PULocationID"= doz."LocationID"
+WHERE puz."Zone" = 'East Harlem North'
+ORDER BY 3 DESC
+LIMIT 1;
+```
+```
+"pickup_zone"		"dropopff_zone"		"biggest_tip"
+East Harlem North	JFK Airport		87.3
+```
 ## Question 7. Terraform Workflow
 
 Which of the following sequences, **respectively**, describes the workflow for: 
