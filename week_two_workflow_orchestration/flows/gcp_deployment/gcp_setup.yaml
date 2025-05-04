@@ -3,7 +3,7 @@ namespace: zoomcamp
 
 tasks:
   # CREATE BUCKET IN GOOGLE CLOUD to solve troubleshooting issues
-  # 
+  # bucket name variable listed on 04_gcp_kv.yaml
   - id: create_bq_dataset
     type: io.kestra.plugin.gcp.bigquery.CreateDataset
     name: "{{kv('GCP_DATASET')}}"
