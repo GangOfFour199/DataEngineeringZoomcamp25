@@ -53,4 +53,5 @@ How would you configure the timezone to New York in a Schedule trigger?
 
 
 *LINK TO HOMEWORK HERE*
+
 https://github.com/DataTalksClub/data-engineering-zoomcamp/edit/main/cohorts/2025/02-workflow-orchestration/homework.md 
