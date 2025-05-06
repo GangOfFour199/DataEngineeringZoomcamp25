@@ -6,11 +6,11 @@ Within the execution for `Yellow` Taxi data for the year `2020` and month `12`: 
 
 ### Answer 
 
-> Uncompressed file size located in Kestra. Pathway: executions -> details of file listed above -> outputs -> extract -> click file -> preview
+> *Uncompressed* file size located in Kestra. **Pathway**: executions -> details of file listed above -> outputs -> extract -> click file -> preview
 
 - 128.3 MiB
 
-> Compressed file size located in Google Cloud Platform. Pathway: cloud storage -> buckets -> click bucket name -> locate file above and read MB
+> *Compressed* file size located in Google Cloud Platform. **Pathway**: cloud storage -> buckets -> click bucket name -> locate file above and read MB
 
 - 134.5MB
 
