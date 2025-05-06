@@ -66,8 +66,11 @@ FROM `your_project_id.database_name.yellow_tripdata_2021_03`;
 How would you configure the timezone to New York in a Schedule trigger?
 
 > Within the Kestra flow, delcare a trigger and *type: io.kestra.plugin.core.trigger.Schedule*
+> 
 > Include a **timezone** property
+> 
 > Automatically sets to *UTC*, so can use *UTC +-*
+> 
 > Or can specify location
 
 ### Answer
