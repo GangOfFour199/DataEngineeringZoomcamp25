@@ -42,8 +42,12 @@ How many rows are there for the `Green` Taxi data for all CSV files in the year 
 ### Answer
 
 ```sql
-
+SELECT COUNT(*) 
+FROM `your_private_key.databse_name.green_tripdata` 
+WHERE EXTRACT(YEAR FROM tpep_pickup_datetime) = 2020
+AND EXTRACT(YEAR FROM tpep_dropoff_datetime) = 2020;
 ```
+- 1,734,026
 
 ## Question 5
 
