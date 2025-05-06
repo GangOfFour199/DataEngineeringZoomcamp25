@@ -56,9 +56,10 @@ How many rows are there for the `Yellow` Taxi data for the March 2021 CSV file?
 ### Answer
 
 ```sql
-
+SELECT COUNT(1) 
+FROM `your_private_key.database_name.yellow_tripdata_2021_03`;
 ```
-
+- 1,925,152
 
 ## Question 6
 
