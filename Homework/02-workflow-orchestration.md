@@ -33,7 +33,7 @@ FROM `aqueous-flames-458811-k1.de_zoomcamp.yellow_tripdata`
 WHERE EXTRACT(YEAR FROM tpep_pickup_datetime) = 2020
 AND EXTRACT(YEAR FROM tpep_dropoff_datetime) = 2020;
 ```
-- 24648473
+- 24,648,473
 
 ## Question 4
 
