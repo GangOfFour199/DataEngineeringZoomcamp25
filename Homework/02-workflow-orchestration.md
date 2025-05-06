@@ -6,6 +6,13 @@ Within the execution for `Yellow` Taxi data for the year `2020` and month `12`: 
 
 ### Answer 
 
+> Uncompressed file size located in kestra. executions -> details of file listed above -> outputs -> extract -> click file -> preview
+
+- 128.3 MiB
+
+> Compressed file size located in google cloud. cloud storage -> buckets -> click bucket name -> locate file above and read MB
+
+- 134.5MB
 
 ## Question 2
 
@@ -13,6 +20,7 @@ What is the rendered value of the variable `file` when the inputs `taxi` is set 
 
 ### Answer
 
+- `green_tripdata_2020-04.csv`
 
 ## Question 3 
 
