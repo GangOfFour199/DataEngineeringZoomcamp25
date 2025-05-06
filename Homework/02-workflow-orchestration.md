@@ -29,7 +29,7 @@ How many rows are there for the `Yellow` Taxi data for all CSV files in the year
 ### Answer
 ```sql
 SELECT COUNT(*) 
-FROM `your_private_key.databse_name.yellow_tripdata` 
+FROM `your_project_id.databse_name.yellow_tripdata` 
 WHERE EXTRACT(YEAR FROM tpep_pickup_datetime) = 2020
 AND EXTRACT(YEAR FROM tpep_dropoff_datetime) = 2020;
 ```
@@ -43,7 +43,7 @@ How many rows are there for the `Green` Taxi data for all CSV files in the year 
 
 ```sql
 SELECT COUNT(*) 
-FROM `your_private_key.databse_name.green_tripdata` 
+FROM `your_project_id.databse_name.green_tripdata` 
 WHERE EXTRACT(YEAR FROM tpep_pickup_datetime) = 2020
 AND EXTRACT(YEAR FROM tpep_dropoff_datetime) = 2020;
 ```
@@ -57,7 +57,7 @@ How many rows are there for the `Yellow` Taxi data for the March 2021 CSV file?
 
 ```sql
 SELECT COUNT(1) 
-FROM `your_private_key.database_name.yellow_tripdata_2021_03`;
+FROM `your_project_id.database_name.yellow_tripdata_2021_03`;
 ```
 - 1,925,152
 
