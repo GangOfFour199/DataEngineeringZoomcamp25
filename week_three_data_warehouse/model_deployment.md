@@ -13,4 +13,3 @@
 - curl -d '{"instances": [{"passenger_count":1, "trip_distance":12.2, "PULocationID":"193", "DOLocationID":"264", "payment_type":"2","fare_amount":20.4,"tolls_amount":0.0}]}' -X POST http://localhost:8501/v1/models/tip_model:predict
 - http://localhost:8501/v1/models/tip_model
 
-*Note - extract link must be contained within backticks for bigquery to access data*
