@@ -37,6 +37,9 @@ What is the **estimated amount** of data that will be read when this query is ex
 ## Question 3:
 Write a query to retrieve the PULocationID from the table (not the external table) in BigQuery. Now write a query to retrieve the PULocationID and DOLocationID on the same table. Why are the estimated number of Bytes different?
 
+### Answer
+
+
 ## Question 4:
 How many records have a fare_amount of 0?
 
@@ -65,12 +68,17 @@ Choose the answer which most closely matches.</br>
 ## Question 7: 
 Where is the data stored in the External Table you created?
 
+### Answer
 
 
 ## Question 8:
 It is best practice in Big Query to always cluster your data:
 - True
 - False
+
+### Answer
+
+- 
 
 ## (Bonus: Not worth points) Question 9:
 No Points: Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
