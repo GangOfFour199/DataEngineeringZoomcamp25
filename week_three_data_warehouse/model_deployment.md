@@ -2,7 +2,7 @@
 [Tutorial](https://cloud.google.com/bigquery-ml/docs/export-model-tutorial)
 ### Steps
 - gcloud auth login
-- bq --project_id aqueous-flames-458811-k1 extract -m `aqueous-flames-458811-k1.de_zoomcamp.tip_model` gs://taxi_ml_model/tip_model
+- bq --project_id aqueous-flames-458811-k1 extract -m `aqueous-flames-458811-k1.de_zoomcamp.Models.tip_model` gs://taxi_ml_model/tip_model
 - mkdir /tmp/model
 - gsutil cp -r gs://taxi_ml_model/tip_model /tmp/model
 - mkdir -p serving_dir/tip_model/1
