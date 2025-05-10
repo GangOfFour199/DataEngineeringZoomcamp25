@@ -18,10 +18,11 @@ Create a (regular/materialized) table in BQ using the Yellow Taxi Trip Records (
 ## Question 1:
 Question 1: What is count of records for the 2024 Yellow Taxi Data?
 
-### Answer
 ```sql
 SELECT COUNT(*) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
 ```
+
+### Answer
 
 - 20,332,093
 
@@ -29,11 +30,12 @@ SELECT COUNT(*) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_m
 Write a query to count the distinct number of PULocationIDs for the entire dataset on both the tables.</br> 
 What is the **estimated amount** of data that will be read when this query is executed on the External Table and the Table?
 
-### Answer
 ```sql
 SELECT COUNT(DISTINCT PULocationID) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_external_yellow_tripdata
 SELECT COUNT(DISTINCT PULocationID) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
 ```
+
+### Answer
 
 - External = 0MB
 - Materialised = 155.12MB
@@ -61,6 +63,13 @@ WHERE fare_amount = 0;
 
 - 8333 rows
 
+## Question 5:
+What is the best strategy to make an optimized table in Big Query if your query will always filter based on tpep_dropoff_datetime and order the results by VendorID (Create a new table with this strategy)
+
+### Answer
+
+-
+
 ## Question 6:
 Write a query to retrieve the distinct VendorIDs between tpep_dropoff_datetime
 2024-03-01 and 2024-03-15 (inclusive)</br>
@@ -69,10 +78,11 @@ Use the materialized table you created earlier in your from clause and note the 
 
 Choose the answer which most closely matches.</br> 
 
-### Answer
 ```sql
 
 ```
+
+### Answer
 
 -
 
@@ -94,9 +104,10 @@ It is best practice in Big Query to always cluster your data:
 ## (Bonus: Not worth points) Question 9:
 No Points: Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
 
-### Answer
 ```sql
 
 ```
+
+### Answer
 
 -
