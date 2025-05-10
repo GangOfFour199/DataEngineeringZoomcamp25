@@ -116,7 +116,7 @@ SELECT COUNT(*) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_m
 
 ### Answer
 
-- 0B
+- 0B -> The count of records in table is located in the metadata of schema, therefore does not require any processing power to traverse through dataset and count each row.
 
 ## Solution
 
