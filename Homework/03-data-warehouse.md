@@ -105,7 +105,7 @@ It is best practice in Big Query to always cluster your data:
 
 ### Answer
 
-- False
+- False -> With very little GB of data for a table it is not efficient nor beneficial to cluster.
 
 ## (Bonus: Not worth points) Question 9:
 No Points: Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
