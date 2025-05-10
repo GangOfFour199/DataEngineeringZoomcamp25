@@ -20,10 +20,10 @@ Question 1: What is count of records for the 2024 Yellow Taxi Data?
 
 ### Answer
 ```sql
-
+SELECT COUNT(*) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
 ```
 
--
+- 20,332,093
 
 ## Question 2:
 Write a query to count the distinct number of PULocationIDs for the entire dataset on both the tables.</br> 
@@ -31,26 +31,35 @@ What is the **estimated amount** of data that will be read when this query is ex
 
 ### Answer
 ```sql
-
+SELECT COUNT(DISTINCT PULocationID) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_external_yellow_tripdata
+SELECT COUNT(DISTINCT PULocationID) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
 ```
 
--
+- External = 0MB
+- Materialised = 155.12MB
 
 ## Question 3:
 Write a query to retrieve the PULocationID from the table (not the external table) in BigQuery. Now write a query to retrieve the PULocationID and DOLocationID on the same table. Why are the estimated number of Bytes different?
 
+```sql
+SELECT PuLocationID FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
+SELECT PuLocationID, DOLocationID FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
+```
+
 ### Answer
 
+- The required estimate MB to process the data doubled to 310.24MB. As we are retrieving an additional row of values it requires another 155.12MB to retrieve a further column of data.
 
 ## Question 4:
 How many records have a fare_amount of 0?
 
-### Answer
 ```sql
-
+SELECT COUNT(*) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
+WHERE fare_amount = 0;
 ```
+### Answer
 
--
+- 8333 rows
 
 ## Question 6:
 Write a query to retrieve the distinct VendorIDs between tpep_dropoff_datetime
