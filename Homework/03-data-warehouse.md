@@ -68,7 +68,7 @@ What is the best strategy to make an optimized table in Big Query if your query 
 
 ### Answer
 
--
+- Partition by tpep_dropoff_datetime and Cluster on VendorID
 
 ## Question 6:
 Write a query to retrieve the distinct VendorIDs between tpep_dropoff_datetime
@@ -79,18 +79,23 @@ Use the materialized table you created earlier in your from clause and note the 
 Choose the answer which most closely matches.</br> 
 
 ```sql
-
+SELECT DISTINCT(VendorID) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised
+WHERE DATE(tpep_dropoff_datetime) BETWEEN '2024-03-01' AND '2024-03-15';
+SELECT DISTINCT(VendorID) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_partitioned
+WHERE DATE(tpep_dropoff_datetime) BETWEEN '2024-03-01' AND '2024-03-15';
 ```
 
 ### Answer
 
--
+- Materialised = 310.24MB
+- Partitioned = 26.84MB
 
 ## Question 7: 
 Where is the data stored in the External Table you created?
 
 ### Answer
 
+- Big Table
 
 ## Question 8:
 It is best practice in Big Query to always cluster your data:
@@ -99,15 +104,15 @@ It is best practice in Big Query to always cluster your data:
 
 ### Answer
 
-- 
+- False
 
 ## (Bonus: Not worth points) Question 9:
 No Points: Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
 
 ```sql
-
+SELECT COUNT(*) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_materialised;
 ```
 
 ### Answer
 
--
+- 0B
