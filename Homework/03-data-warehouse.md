@@ -96,7 +96,7 @@ Where is the data stored in the External Table you created?
 
 ### Answer
 
-- Big Table
+- GCP Bucket -> Check the uri of the file used for creation of external table, located in bucket
 
 ## Question 8:
 It is best practice in Big Query to always cluster your data:
