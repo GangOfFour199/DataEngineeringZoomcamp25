@@ -37,7 +37,7 @@ SELECT COUNT(DISTINCT PULocationID) FROM aqueous-flames-458811-k1.de_zoomcamp.20
 
 ### Answer
 
-- External = 0MB
+- External = 0MB -> This file is located in gcs bucket not in BigqQuery
 - Materialised = 155.12MB
 
 ## Question 3:
