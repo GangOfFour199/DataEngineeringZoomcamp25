@@ -116,3 +116,7 @@ SELECT COUNT(*) FROM aqueous-flames-458811-k1.de_zoomcamp.2024_yellow_tripdata_m
 ### Answer
 
 - 0B
+
+## Solution
+
+Solution: https://www.youtube.com/watch?v=wpLmImIUlPg
