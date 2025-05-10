@@ -51,6 +51,7 @@ SELECT PuLocationID, DOLocationID FROM aqueous-flames-458811-k1.de_zoomcamp.2024
 ### Answer
 
 - The required estimate MB to process the data doubled to 310.24MB. As we are retrieving an additional row of values it requires another 155.12MB to retrieve a further column of data.
+- BigQuery is a columnar database, and it only scans the specific columns requested in the query. Querying two columns (PULocationID, DOLocationID) requires reading more data than querying one column (PULocationID), leading to a higher estimated number of bytes processed.
 
 ## Question 4:
 How many records have a fare_amount of 0?
