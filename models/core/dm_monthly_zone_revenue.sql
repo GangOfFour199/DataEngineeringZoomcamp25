@@ -24,4 +24,7 @@ select
     avg(trip_distance) as avg_monthly_trip_distance
 
 from trips_data
+WHERE {{ dbt.date_trunc("month", "pickup_datetime") }} BETWEEN '2019-01-01' AND '2020-12-31'
 group by 1, 2, 3
+order by 2
+
