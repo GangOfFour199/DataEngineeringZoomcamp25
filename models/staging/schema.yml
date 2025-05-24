@@ -4,14 +4,16 @@ sources:
   - name: staging
     database: "{{ env_var('DBT_DATABASE', 'aqueous-flames-458811-k1') }}"
     schema:
-      "{{ env_var('DBT_SCHEMA', 'de_zoomcamp') }}"
+      "{{ env_var('DBT_SCHEMA', 'dbt_wwaight') }}" #FHV - homework
+      # "{{ env_var('DBT_SCHEMA', 'de_zoomcamp') }}"
       # loaded_at_field: record_loaded_at
     tables:
-      - name: green_tripdata
+      - name: green_tripdata_materialised
       - name:
-          yellow_tripdata
+          yellow_tripdata_materialised
           # freshness:
           # error_after: {count: 6, period: hour}
+      - name: fhv_data_clustered
 
 models:
   - name: stg_green_tripdata
@@ -175,7 +177,7 @@ models:
           - accepted_values:
               values: "{{ var('payment_type_values') }}"
               severity: warn
-              quote: false 
+              quote: false
       - name: payment_type_description
         description: Description of the payment_type code
       - name: Fare_amount
