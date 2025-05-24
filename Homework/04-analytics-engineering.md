@@ -82,7 +82,7 @@ Select the option that does **NOT** apply for materializing `fct_taxi_monthly_zo
 
 ### Answer
 
->
+> fct_taxi_monthly_zone_revenue materialises from core path, therefore working through models/staging branches upstream means you do not trace lienage through core
 
 - `dbt run --select models/staging/+`
 
@@ -121,9 +121,12 @@ That all being said, regarding macro above, **select all statements that are tru
 
 ### Answer
 
+> All the following statements below are true
+
 - Setting a value for  `DBT_BIGQUERY_TARGET_DATASET` env var is mandatory, or it'll fail to compile
 - Setting a value for `DBT_BIGQUERY_STAGING_DATASET` env var is mandatory, or it'll fail to compile
 - When using `core`, it materializes in the dataset defined in `DBT_BIGQUERY_TARGET_DATASET`
+- When using `stg`, it materializes in the dataset defined in `DBT_BIGQUERY_STAGING_DATASET`, or defaults to `DBT_BIGQUERY_TARGET_DATASET`
 - When using `staging`, it materializes in the dataset defined in `DBT_BIGQUERY_STAGING_DATASET`, or defaults to `DBT_BIGQUERY_TARGET_DATASET`
 
 
