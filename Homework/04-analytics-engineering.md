@@ -46,6 +46,8 @@ from {{ source('raw_nyc_tripdata', 'ext_green_taxi' ) }}
 
 ### Answer
 
+> Use the values of the the env variables exported
+
 - `select * from myproject.my_nyc_tripdata.ext_green_taxi`
 
 ### Question 2: dbt Variables & Dynamic Models
@@ -65,11 +67,9 @@ What would you change to accomplish that in a such way that command line argumen
 
 ### Answer
 
-- Add `ORDER BY pickup_datetime DESC` and `LIMIT {{ var("days_back", 30) }}`
-- Update the WHERE clause to `pickup_datetime >= CURRENT_DATE - INTERVAL '{{ var("days_back", 30) }}' DAY`
-- Update the WHERE clause to `pickup_datetime >= CURRENT_DATE - INTERVAL '{{ env_var("DAYS_BACK", "30") }}' DAY`
+> declare a var("var_name") that overrides env_var(""), within the syntaxt provide n days and after parentheses specify value TYPE
+
 - Update the WHERE clause to `pickup_datetime >= CURRENT_DATE - INTERVAL '{{ var("days_back", env_var("DAYS_BACK", "30")) }}' DAY`
-- Update the WHERE clause to `pickup_datetime >= CURRENT_DATE - INTERVAL '{{ env_var("DAYS_BACK", var("days_back", "30")) }}' DAY`
 
 
 ### Question 3: dbt Data Lineage and Execution
@@ -82,10 +82,8 @@ Select the option that does **NOT** apply for materializing `fct_taxi_monthly_zo
 
 ### Answer
 
-- `dbt run`
-- `dbt run --select +models/core/dim_taxi_trips.sql+ --target prod`
-- `dbt run --select +models/core/fct_taxi_monthly_zone_revenue.sql`
-- `dbt run --select +models/core/`
+>
+
 - `dbt run --select models/staging/+`
 
 
