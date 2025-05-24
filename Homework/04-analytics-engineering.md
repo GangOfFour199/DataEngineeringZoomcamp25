@@ -191,9 +191,9 @@ For the Trips that **respectively** started from `Newark Airport`, `SoHo`, and `
 - LaGuardia Airport, Yorkville East, Greenpoint
 
 
-## Submitting the solutions
+## Solution
 
-* Form for submitting: https://courses.datatalks.club/de-zoomcamp-2025/homework/hw4
+Solution: 
 
 
 ## Solution 
