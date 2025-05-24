@@ -67,7 +67,7 @@ What would you change to accomplish that in a such way that command line argumen
 
 ### Answer
 
-> declare a var("var_name") that overrides env_var(""), within the syntaxt provide n days and after parentheses specify value TYPE
+> declare a var("var_name") that overrides env_var(""), within the syntax provide n days and after parentheses specify value TYPE
 
 - Update the WHERE clause to `pickup_datetime >= CURRENT_DATE - INTERVAL '{{ var("days_back", env_var("DAYS_BACK", "30")) }}' DAY`
 
