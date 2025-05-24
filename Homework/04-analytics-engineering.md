@@ -44,12 +44,9 @@ select *
 from {{ source('raw_nyc_tripdata', 'ext_green_taxi' ) }}
 ```
 
-- `select * from dtc_zoomcamp_2025.raw_nyc_tripdata.ext_green_taxi`
-- `select * from dtc_zoomcamp_2025.my_nyc_tripdata.ext_green_taxi`
-- `select * from myproject.raw_nyc_tripdata.ext_green_taxi`
-- `select * from myproject.my_nyc_tripdata.ext_green_taxi`
-- `select * from dtc_zoomcamp_2025.raw_nyc_tripdata.green_taxi`
+### Answer
 
+- `select * from dtc_zoomcamp_2025.raw_nyc_tripdata.ext_green_taxi`
 
 ### Question 2: dbt Variables & Dynamic Models
 
@@ -66,6 +63,8 @@ where pickup_datetime >= CURRENT_DATE - INTERVAL '30' DAY
 
 What would you change to accomplish that in a such way that command line arguments takes precedence over ENV_VARs, which takes precedence over DEFAULT value?
 
+### Answer
+
 - Add `ORDER BY pickup_datetime DESC` and `LIMIT {{ var("days_back", 30) }}`
 - Update the WHERE clause to `pickup_datetime >= CURRENT_DATE - INTERVAL '{{ var("days_back", 30) }}' DAY`
 - Update the WHERE clause to `pickup_datetime >= CURRENT_DATE - INTERVAL '{{ env_var("DAYS_BACK", "30") }}' DAY`
@@ -80,6 +79,8 @@ Considering the data lineage below **and** that taxi_zone_lookup is the **only**
 ![image](./homework_q2.png)
 
 Select the option that does **NOT** apply for materializing `fct_taxi_monthly_zone_revenue`:
+
+### Answer
 
 - `dbt run`
 - `dbt run --select +models/core/dim_taxi_trips.sql+ --target prod`
@@ -119,6 +120,9 @@ And use on your staging, dim_ and fact_ models as:
 ```
 
 That all being said, regarding macro above, **select all statements that are true to the models using it**:
+
+### Answer
+
 - Setting a value for  `DBT_BIGQUERY_TARGET_DATASET` env var is mandatory, or it'll fail to compile
 - Setting a value for `DBT_BIGQUERY_STAGING_DATASET` env var is mandatory, or it'll fail to compile
 - When using `core`, it materializes in the dataset defined in `DBT_BIGQUERY_TARGET_DATASET`
@@ -148,6 +152,8 @@ You might want to add some new dimensions `year` (e.g.: 2019, 2020), `quarter` (
 
 Considering the YoY Growth in 2020, which were the yearly quarters with the best (or less worse) and worst results for green, and yellow
 
+### Answer
+
 - green: {best: 2020/Q2, worst: 2020/Q1}, yellow: {best: 2020/Q2, worst: 2020/Q1}
 - green: {best: 2020/Q2, worst: 2020/Q1}, yellow: {best: 2020/Q3, worst: 2020/Q4}
 - green: {best: 2020/Q1, worst: 2020/Q2}, yellow: {best: 2020/Q2, worst: 2020/Q1}
@@ -162,6 +168,8 @@ Considering the YoY Growth in 2020, which were the yearly quarters with the best
 3. Compute the **continous percentile** of `fare_amount` partitioning by service_type, year and and month
 
 Now, what are the values of `p97`, `p95`, `p90` for Green Taxi and Yellow Taxi, in April 2020?
+
+### Answer
 
 - green: {p97: 55.0, p95: 45.0, p90: 26.5}, yellow: {p97: 52.0, p95: 37.0, p90: 25.5}
 - green: {p97: 55.0, p95: 45.0, p90: 26.5}, yellow: {p97: 31.5, p95: 25.5, p90: 19.0}
@@ -184,6 +192,8 @@ Now...
 
 For the Trips that **respectively** started from `Newark Airport`, `SoHo`, and `Yorkville East`, in November 2019, what are **dropoff_zones** with the 2nd longest p90 trip_duration ?
 
+### Answer
+
 - LaGuardia Airport, Chinatown, Garment District
 - LaGuardia Airport, Park Slope, Clinton East
 - LaGuardia Airport, Saint Albans, Howard Beach
@@ -194,7 +204,3 @@ For the Trips that **respectively** started from `Newark Airport`, `SoHo`, and `
 ## Solution
 
 Solution: 
-
-
-## Solution 
-
