@@ -152,14 +152,53 @@ You might want to add some new dimensions `year` (e.g.: 2019, 2020), `quarter` (
 
 Considering the YoY Growth in 2020, which were the yearly quarters with the best (or less worse) and worst results for green, and yellow
 
+```sql
+{{ config(materialized="table") }}
+
+with
+    trips_data as (select * from {{ ref("fact_trips") }}),
+    quarterly_revenues as (
+        select
+            -- Revenue grouping 
+            pickup_quarter as revenue_quarter,
+            pickup_year as revenue_year,
+            service_type,
+
+            -- Revenue calculation 
+            sum(total_amount) as total_quarter_revenue
+
+        from trips_data
+        where pickup_year between 2019 and 2020
+        group by 1, 2, 3
+    ),
+    quarterly_yoy_growth as (
+        select
+            *,
+
+            -- Quarterly YoY growth
+            lag(total_quarter_revenue, 2) over (
+                partition by revenue_quarter order by revenue_year, service_type
+            ) as last_year_total_quarter_revenue,
+            100 * (
+                total_quarter_revenue / nullif(
+                    lag(total_quarter_revenue, 2) over (
+                        partition by revenue_quarter order by revenue_year, service_type
+                    ),
+                    0
+                )
+                - 1
+            ) as quarterly_yoy_growth
+
+        from quarterly_revenues
+    )
+select *
+from quarterly_yoy_growth
+order by revenue_quarter, revenue_year, service_type
+```
+
 ### Answer
 
-- green: {best: 2020/Q2, worst: 2020/Q1}, yellow: {best: 2020/Q2, worst: 2020/Q1}
-- green: {best: 2020/Q2, worst: 2020/Q1}, yellow: {best: 2020/Q3, worst: 2020/Q4}
-- green: {best: 2020/Q1, worst: 2020/Q2}, yellow: {best: 2020/Q2, worst: 2020/Q1}
 - green: {best: 2020/Q1, worst: 2020/Q2}, yellow: {best: 2020/Q1, worst: 2020/Q2}
-- green: {best: 2020/Q1, worst: 2020/Q2}, yellow: {best: 2020/Q3, worst: 2020/Q4}
-
 
 ### Question 6: P97/P95/P90 Taxi Monthly Fare
 
