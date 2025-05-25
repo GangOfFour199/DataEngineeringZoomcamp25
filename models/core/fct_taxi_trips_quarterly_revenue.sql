@@ -1,29 +1,41 @@
 {{ config(materialized="table") }}
 
-with trips_data as (select * from {{ ref("fact_trips") }})
-select
-    -- Revenue grouping 
-    pickup_zone as revenue_zone,
-    {{ dbt.date_trunc("month", "pickup_datetime") }} as revenue_month,
+with
+    trips_data as (select * from {{ ref("fact_trips") }}),
+    quarterly_revenues as (
+        select
+            -- Revenue grouping 
+            pickup_quarter as revenue_quarter,
+            pickup_year as revenue_year,
+            service_type,
 
-    service_type,
+            -- Revenue calculation 
+            sum(total_amount) as total_quarter_revenue
 
-    -- Revenue calculation 
-    sum(fare_amount) as revenue_monthly_fare,
-    sum(extra) as revenue_monthly_extra,
-    sum(mta_tax) as revenue_monthly_mta_tax,
-    sum(tip_amount) as revenue_monthly_tip_amount,
-    sum(tolls_amount) as revenue_monthly_tolls_amount,
-    sum(ehail_fee) as revenue_monthly_ehail_fee,
-    sum(improvement_surcharge) as revenue_monthly_improvement_surcharge,
-    sum(total_amount) as revenue_monthly_total_amount,
+        from trips_data
+        where pickup_year between 2019 and 2020
+        group by 1, 2, 3
+    ),
+    quarterly_yoy_growth as (
+        select
+            *,
 
-    -- Additional calculations
-    count(tripid) as total_monthly_trips,
-    avg(passenger_count) as avg_monthly_passenger_count,
-    avg(trip_distance) as avg_monthly_trip_distance
+            -- Quarterly YoY growth
+            lag(total_quarter_revenue, 2) over (
+                partition by revenue_quarter order by revenue_year, service_type
+            ) as last_year_total_quarter_revenue,
+            100 * (
+                total_quarter_revenue / nullif(
+                    lag(total_quarter_revenue, 2) over (
+                        partition by revenue_quarter order by revenue_year, service_type
+                    ),
+                    0
+                )
+                - 1
+            ) as quarterly_yoy_growth
 
-from trips_data
-WHERE {{ dbt.date_trunc("month", "pickup_datetime") }} BETWEEN '2019-01-01' AND '2020-12-31'
-group by 1, 2, 3
-order by 2, 3
+        from quarterly_revenues
+    )
+select *
+from quarterly_yoy_growth
+order by revenue_quarter, revenue_year, service_type
