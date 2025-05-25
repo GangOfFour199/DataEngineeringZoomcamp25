@@ -245,12 +245,7 @@ from continuous_percentiles
 order by pickup_month, pickup_year, service_type
 ```
 
-- green: {p97: 55.0, p95: 45.0, p90: 26.5}, yellow: {p97: 52.0, p95: 37.0, p90: 25.5}
-- green: {p97: 55.0, p95: 45.0, p90: 26.5}, yellow: {p97: 31.5, p95: 25.5, p90: 19.0}
-- green: {p97: 40.0, p95: 33.0, p90: 24.5}, yellow: {p97: 52.0, p95: 37.0, p90: 25.5}
-- green: {p97: 40.0, p95: 33.0, p90: 24.5}, yellow: {p97: 31.5, p95: 25.5, p90: 19.0}
-- green: {p97: 55.0, p95: 45.0, p90: 26.5}, yellow: {p97: 52.0, p95: 25.5, p90: 19.0}
-
+- green: {p97: 28.0, p95: 23.0, p90: 18.0}, yellow: {p97: 32.0, p95: 26.0, p90: 19.5}
 
 ### Question 7: Top #Nth longest P90 travel time Location for FHV
 
