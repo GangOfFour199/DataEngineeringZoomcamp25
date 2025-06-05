@@ -13,16 +13,16 @@ export PATH="${SPARK_HOME}/bin:${PATH}"
 ```
 
 ``` bash
-which pyspark
-```
-
-``` bash
 spark-shell
 ```
 
 ```bash
 export PYTHONPATH="${SPARK_HOME}/python/:$PYTHONPATH"
 export PYTHONPATH="${SPARK_HOME}/python/lib/py4j-0.10.9.5-src.zip:$PYTHONPATH"
+```
+
+``` bash
+which pyspark
 ```
 
 ``` bash
