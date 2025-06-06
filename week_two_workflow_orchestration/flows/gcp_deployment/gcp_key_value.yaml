@@ -2,6 +2,17 @@ id: 04_gcp_kv
 namespace: zoomcamp
 
 tasks:
+  - id: gcp_credentials
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_CREDS
+    kvType: STRING
+    value: |
+      {
+        "type": "service_account",
+        "project_id": "project-id",
+        ...
+      }
+    
   - id: gcp_project_id
     type: io.kestra.plugin.core.kv.Set
     key: GCP_PROJECT_ID
