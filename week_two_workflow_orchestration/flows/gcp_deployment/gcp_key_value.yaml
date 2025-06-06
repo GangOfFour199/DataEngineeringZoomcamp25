@@ -5,7 +5,7 @@ tasks:
   - id: gcp_credentials
     type: io.kestra.plugin.core.kv.Set
     key: GCP_CREDS
-    kvType: STRING
+    kvType: JSON
     value: |
       {
         "type": "service_account",
